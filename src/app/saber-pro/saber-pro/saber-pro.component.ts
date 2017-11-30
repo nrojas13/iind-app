@@ -22,12 +22,12 @@ export class SaberProComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('http://51.143.100.161:3000/saber_pros')
+    this.http.get('http://localhost:3000/saber_pros')
       .map(response => response.json())
       .subscribe(result => {
         this.saberPro = [];
         result.forEach(element => {
-          this.http.get('http://51.143.100.161:3000/estudiantes/' + element.estudiante_id)
+          this.http.get('http://localhost:3000/estudiantes/' + element.estudiante_id)
             .map(response2 => response2.json())
             .subscribe(result2 => {
               element.estudiante_nombres = result2.nombres;
@@ -45,7 +45,7 @@ export class SaberProComponent implements OnInit {
   }
 
   public obtenerDatosEstudiante(element): any {
-    this.http.get('http://51.143.100.161:3000/estudiantes/' + element.estudiante_id)
+    this.http.get('http://localhost:3000/estudiantes/' + element.estudiante_id)
             .map(response2 => response2.json())
             .subscribe(result2 => {
               element.estudiante_nombres = result2.nombres;
@@ -65,7 +65,7 @@ export class SaberProComponent implements OnInit {
             let file: File = fileList[0];
             let formData:FormData = new FormData();
             formData.append('file', file, file.name);
-            this.http.post('http://51.143.100.161:3000/saber_pros/cargar_archivo_pagos', formData)
+            this.http.post('http://localhost:3000/saber_pros/cargar_archivo_pagos', formData)
                 .map(res => res.json())
                 .subscribe(
                     data => console.log('success'),

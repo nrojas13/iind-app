@@ -90,6 +90,10 @@ export class SaberProComponent implements OnInit {
     FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
   }
 
+  public onActualizar(event) {
+
+  }
+
   public settings = {
     noDataMessage: 'No hay información',
     actions: {

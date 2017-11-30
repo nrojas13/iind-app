@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificacionesComponent implements OnInit {
 
+  noticia: any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public onPublicarNoticia() {
+    
   }
 
 }

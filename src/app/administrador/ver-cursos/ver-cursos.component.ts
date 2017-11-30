@@ -17,7 +17,7 @@ export class VerCursosComponent implements OnInit {
   constructor(private http: Http, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:3000/cursos')
+    this.http.get('http://51.143.100.161:3000/cursos')
                       .map(response => response.json())
                       .subscribe(result => {
                         this.cursos = result;

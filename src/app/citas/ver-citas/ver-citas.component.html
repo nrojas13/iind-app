@@ -1,0 +1,208 @@
+<div class="row">
+  <h1>Citas</h1>
+</div>
+
+<div class="row" style="margin-bottom: 20px;">
+  <select name="role" [(ngModel)]="administrador" style="width:100%">
+    <option value="2">mc.chacon</option>
+    <option value="3">n.rodriguez</option>
+    <option value="4">d-munoz</option>
+  </select>
+</div>
+<div class="row">
+  <div class="col-12">
+    <h3>Homologaciones</h3>
+    <hr>
+  </div>
+</div>
+<div class="row calendario">
+  <div class="col-2 bloque-dia">
+    <div class="header-dia"><h3>Lunes</h3></div>
+    <ng-container *ngFor="let cita of citasHomologaciones">
+      <div class="cita" *ngIf="cita.diaSemanaInicio === 'Lunes'">
+        Estado: {{cita.estado}} <br>
+        {{cita.horaInicio}}:{{cita.minutosInicio}} - {{cita.horaFin}}:{{cita.minutosFin}}
+        <button type="button" class="btn btn-secondary btn-ver-detalles" (click)="onConfirmarAsistencia(cita)">
+          Asisitió
+        </button>
+        <button type="button" class="btn btn-primary btn-ver-detalles" (click)="onVerDetalles(cita)">
+          Ver Detalles
+        </button>
+        <button type="button" class="btn btn-danger btn-ver-detalles" (click)="onCancelar(cita)">
+          Cancelar
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-2 bloque-dia">
+    <div class="header-dia"><h3>Martes</h3></div>
+    <ng-container *ngFor="let cita of citasHomologaciones">
+      <div class="cita" *ngIf="cita.diaSemanaInicio === 'Martes'">
+        Estado: {{cita.estado}} <br>
+        {{cita.horaInicio}}:{{cita.minutosInicio}} - {{cita.horaFin}}:{{cita.minutosFin}}
+        <button type="button" class="btn btn-secondary btn-ver-detalles" (click)="onConfirmarAsistencia(cita)">
+          Asisitió
+        </button>
+        <button type="button" class="btn btn-primary btn-ver-detalles" (click)="onVerDetalles(cita)">
+          Ver Detalles
+        </button>
+        <button type="button" class="btn btn-danger btn-ver-detalles" (click)="onCancelar(cita)">
+          Cancelar
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-2 bloque-dia">
+    <div class="header-dia"><h3>Miércoles</h3></div>
+    <ng-container *ngFor="let cita of citasHomologaciones">
+      <div class="cita" *ngIf="cita.diaSemanaInicio === 'Miercoles'">
+        Estado: {{cita.estado}} <br>
+        {{cita.horaInicio}}:{{cita.minutosInicio}} - {{cita.horaFin}}:{{cita.minutosFin}}
+        <button type="button" class="btn btn-primary btn-ver-detalles" (click)="onConfirmarAsistencia(cita)">
+          Asisitió
+        </button>
+        <button type="button" class="btn btn-primary btn-ver-detalles" (click)="onVerDetalles(cita)">
+          Ver Detalles
+        </button>
+        <button type="button" class="btn btn-danger btn-ver-detalles" (click)="onCancelar(cita)">
+          Cancelar
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-2 bloque-dia">
+    <div class="header-dia"><h3>Jueves</h3></div>
+    <ng-container *ngFor="let cita of citasHomologaciones">
+      <div class="cita" *ngIf="cita.diaSemanaInicio === 'Jueves'">
+        Estado: {{cita.estado}} <br>
+        {{cita.horaInicio}}:{{cita.minutosInicio}} - {{cita.horaFin}}:{{cita.minutosFin}}
+        <button type="button" class="btn btn-secondary btn-ver-detalles" (click)="onConfirmarAsistencia(cita)">
+          Asisitió
+        </button>
+        <button type="button" class="btn btn-primary btn-ver-detalles" (click)="onVerDetalles(cita)">
+          Ver Detalles
+        </button>
+        <button type="button" class="btn btn-danger btn-ver-detalles" (click)="onCancelar(cita)">
+          Cancelar
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-2 bloque-dia">
+    <div class="header-dia"><h3>Viernes</h3></div>
+    <ng-container *ngFor="let cita of citasHomologaciones">
+      <div class="cita" *ngIf="cita.diaSemanaInicio === 'Viernes'">
+        Estado: {{cita.estado}} <br>
+        {{cita.horaInicio}}:{{cita.minutosInicio}} - {{cita.horaFin}}:{{cita.minutosFin}}
+        <button type="button" class="btn btn-secondary btn-ver-detalles" (click)="onConfirmarAsistencia(cita)">
+          Asisitió
+        </button>
+        <button type="button" class="btn btn-primary btn-ver-detalles" (click)="onVerDetalles(cita)">
+          Ver Detalles
+        </button>
+        <button type="button" class="btn btn-danger btn-ver-detalles" (click)="onCancelar(cita)">
+          Cancelar
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-12">
+    <h3>Consejeria</h3>
+    <hr>
+  </div>
+</div>
+<div class="row calendario">
+  <div class="col-2 bloque-dia">
+    <div class="header-dia"><h3>Lunes</h3></div>
+    <ng-container *ngFor="let cita of citasConsejeria">
+      <div class="cita" *ngIf="cita.diaSemanaInicio === 'Lunes'">
+        Estado: {{cita.estado}} <br>
+        {{cita.horaInicio}}:{{cita.minutosInicio}} - {{cita.horaFin}}:{{cita.minutosFin}}
+        <button type="button" class="btn btn-secondary btn-ver-detalles" (click)="onConfirmarAsistencia(cita)">
+          Asisitió
+        </button>
+        <button type="button" class="btn btn-primary btn-ver-detalles" (click)="onVerDetalles(cita)">
+          Ver Detalles
+        </button>
+        <button type="button" class="btn btn-danger btn-ver-detalles" (click)="onCancelar(cita)">
+          Cancelar
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-2 bloque-dia">
+    <div class="header-dia"><h3>Martes</h3></div>
+    <ng-container *ngFor="let cita of citasConsejeria">
+      <div class="cita" *ngIf="cita.diaSemanaInicio === 'Martes'">
+        Estado: {{cita.estado}} <br>
+        {{cita.horaInicio}}:{{cita.minutosInicio}} - {{cita.horaFin}}:{{cita.minutosFin}}
+        <button type="button" class="btn btn-secondary btn-ver-detalles" (click)="onConfirmarAsistencia(cita)">
+          Asisitió
+        </button>
+        <button type="button" class="btn btn-primary btn-ver-detalles" (click)="onVerDetalles(cita)">
+          Ver Detalles
+        </button>
+        <button type="button" class="btn btn-danger btn-ver-detalles" (click)="onCancelar(cita)">
+          Cancelar
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-2 bloque-dia">
+    <div class="header-dia"><h3>Miércoles</h3></div>
+    <ng-container *ngFor="let cita of citasConsejeria">
+      <div class="cita" *ngIf="cita.diaSemanaInicio === 'Miercoles'">
+        Estado: {{cita.estado}} <br>
+        {{cita.horaInicio}}:{{cita.minutosInicio}} - {{cita.horaFin}}:{{cita.minutosFin}}
+        <button type="button" class="btn btn-secondary btn-ver-detalles" (click)="onConfirmarAsistencia(cita)">
+          Asisitió
+        </button>
+        <button type="button" class="btn btn-primary btn-ver-detalles" (click)="onVerDetalles(cita)">
+          Ver Detalles
+        </button>
+        <button type="button" class="btn btn-danger btn-ver-detalles" (click)="onCancelar(cita)">
+          Cancelar
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-2 bloque-dia">
+    <div class="header-dia"><h3>Jueves</h3></div>
+    <ng-container *ngFor="let cita of citasConsejeria">
+      <div class="cita" *ngIf="cita.diaSemanaInicio === 'Jueves'">
+        Estado: {{cita.estado}} <br>
+        {{cita.horaInicio}}:{{cita.minutosInicio}} - {{cita.horaFin}}:{{cita.minutosFin}}
+        <button type="button" class="btn btn-secondary btn-ver-detalles" (click)="onConfirmarAsistencia(cita)">
+          Asisitió
+        </button>
+        <button type="button" class="btn btn-primary btn-ver-detalles" (click)="onVerDetalles(cita)">
+          Ver Detalles
+        </button>
+        <button type="button" class="btn btn-danger btn-ver-detalles" (click)="onCancelar(cita)">
+          Cancelar
+        </button>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-2 bloque-dia">
+    <div class="header-dia"><h3>Viernes</h3></div>
+    <ng-container *ngFor="let cita of citasConsejeria">
+      <div class="cita" *ngIf="cita.diaSemanaInicio === 'Viernes'">
+        Estado: {{cita.estado}} <br>
+        {{cita.horaInicio}}:{{cita.minutosInicio}} - {{cita.horaFin}}:{{cita.minutosFin}}
+        <button type="button" class="btn btn-secondary btn-ver-detalles" (click)="onConfirmarAsistencia(cita)">
+          Asisitió
+        </button>
+        <button type="button" class="btn btn-primary btn-ver-detalles" (click)="onVerDetalles(cita)">
+          Ver Detalles
+        </button>
+        <button type="button" class="btn btn-danger btn-ver-detalles" (click)="onCancelar(cita)">
+          Cancelar
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>

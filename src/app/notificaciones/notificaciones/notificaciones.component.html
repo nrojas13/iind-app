@@ -1,0 +1,31 @@
+<h1>Notificaciones 2017-20</h1>
+
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Asunto de la notificación: </label>
+      <input type="text" class="form-control" id="tituloNoticia" placeholder="Asunto de la notificación" [(ngModel)]="noticia.titulo">
+    </div>
+    <div class="form-group">
+      <label for="exampleTextarea">Cuerpo de la notificación:</label>
+      <textarea class="form-control" id="cuerpoNoticia" rows="8" placeholder="Cuerpo de la notificación" [(ngModel)]="noticia.texto"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleTextarea">Destinatario:</label>
+      <select name="" id="" class="form-control">
+        <option value="">Seleccione una opción</option>
+        <option value="">Estudiantes primer semestre</option>
+        <option value="">Estudiantes segundo semestre</option>
+        <option value="">Estudiantes monitores según estado</option>
+        <option value="">Estudiantes graduandos según estado</option>
+        <option value="">Estudiantes prácticas según estado</option>
+        <option value="">Estudiantes saber pro según estado</option>
+        <option value="">Estudiantes por curso</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="button" class="btn btn-primary" style="width: 100%" (click)="onPublicarNoticia()">Enviar Notificación</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.titulo {
+    margin-bottom: 20px;
+}
+
+.indicadores {
+    margin-bottom: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+    border-radius: 5px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px;
+}
+
+.equipo, .crear-profesor {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.crear-profesor  {
+    input, select, button {
+        border-radius: 5px;
+    }
+}

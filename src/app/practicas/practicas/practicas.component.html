@@ -1,0 +1,7 @@
+<div class="row">
+    <h1 class="col-8">Prácticas 2017-10</h1>
+    <div class="col-4">
+        <button type="button" class="btn btn-primary" style="width: 100%" (click)="exportAsExcelFile()">Descargar</button>
+    </div>
+</div>
+<ng2-smart-table class="form-control" [settings]="settings" [source]="practicas" (editConfirm)="onActualizar($event)"></ng2-smart-table>

@@ -1,0 +1,64 @@
+<h2 class="titulo">{{ curso.nombre_curso }}</h2>
+<div class="row indicadores">
+  <div class="col-sm-3">
+    <div class="callout callout-info">
+      <small class="text-muted">Inscritos</small><br>
+      <strong class="h4">{{curso.inscritos}}</strong>
+    </div>
+  </div><!--/.col-->
+  <div class="col-sm-3">
+    <div class="callout callout-danger">
+      <small class="text-muted">Profesores</small><br>
+      <strong class="h4">{{this.profesores.length}}</strong>
+    </div>
+  </div><!--/.col-->
+  <div class="col-sm-3">
+    <div class="callout callout-warning">
+      <small class="text-muted">Plazas Calculadas</small><br>
+      <strong class="h4">{{curso.monitores_requeridos}}</strong>
+    </div>
+  </div><!--/.col-->
+  <div class="col-sm-3">
+    <div class="callout callout-success">
+      <small class="text-muted">Monitores Seleccionados</small><br>
+      <strong class="h4">{{curso.monitores_solicitados}}</strong>
+    </div>
+  </div><!--/.col-->
+</div><!--/.row-->
+<div class="row">
+  <div class="col-md-8">
+    <div class="equipo form-control">
+      <h4>Equipo</h4>
+      <ng2-smart-table class="form-control" [settings]="settings" [source]="profesores"></ng2-smart-table>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="crear-profesor form-control">
+      <h4>Crear Profesor</h4>
+      <form (ngSubmit)="onCrearProfesor()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nombres</label>
+          <input type="text" [(ngModel)]="profesor.nombres" class="form-control" name="nombres" placeholder="Pepito Andrés">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Apellidos</label>
+          <input type="text" [(ngModel)]="profesor.apellidos" class="form-control" name="apellidos" placeholder="Pérez">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Correo uniandes</label>
+          <input type="email" [(ngModel)]="profesor.email" class="form-control" name="correo" placeholder="pa.perez@uniandes.edu.co">
+        </div>
+        <div class="form-group">
+          <label for="tipo">Tipo</label>
+          <select class="form-control" name="tipo" id="tipo" [(ngModel)]="profesor.tipo">
+            <option value="Profesor">Profesor</option>
+            <option value="Profesor">Asistente Graduado</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success col">Crear profesor</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.sidebar .nav .nav-item .nav-link.active {
+    background: rgb(86, 17, 83);
+}
+
+.sidebar .nav .nav-item .nav-link.active i, .sidebar .nav .nav-item .navbar .active.dropdown-toggle i, .navbar .sidebar .nav .nav-item .active.dropdown-toggle i {
+    color: rgb(253, 242, 28);
+}
+
+.sidebar .nav .nav-item .nav-link:hover {
+    background: rgb(86, 17, 83) !important;
+}

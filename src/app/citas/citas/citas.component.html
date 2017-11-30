@@ -1,0 +1,37 @@
+<div class="row titulo">
+    <h1 class="col-12">Horario 2017-10</h1>
+</div>
+<div class="row" style="margin-bottom: 20px;">
+  <div class="col-12">
+    <select name="role" [(ngModel)]="administrador_id" style="width:100%">
+      <option value="2">Camila</option>
+      <option value="3">Natalia</option>
+      <option value="4">Diana</option>
+    </select>
+  </div>
+</div>
+<h3>Homologaciones</h3>
+<hr>
+  <daypilot-calendar #calendarHomologaciones [config]="calendarConfigHomologaciones" [events]="events_homologaciones"></daypilot-calendar>
+  <div class="row">
+    <div class="col-4">
+      <button type="button" class="btn btn-danger" style="width: 100%" (click)="onBorrarUltimo('Homologaciones')">Borrar último</button>
+    </div>
+    <div class="col-8">
+      <button type="button" class="btn btn-primary" style="width: 100%" (click)="onGuardarCalendario('Homologaciones')">Guardar</button>
+    </div>
+  </div>
+<br>
+<hr>
+
+<h3>Consejería</h3>
+<hr>
+  <daypilot-calendar #calendarConsejería [config]="calendarConfigConsejeria" [events]="events_consejeria"></daypilot-calendar>
+  <div class="row">
+    <div class="col-4">
+      <button type="button" class="btn btn-danger" style="width: 100%" (click)="onBorrarUltimo('Consejeria')">Borrar último</button>
+    </div>
+    <div class="col-8">
+      <button type="button" class="btn btn-primary" style="width: 100%" (click)="onGuardarCalendario('Consejeria')">Guardar</button>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+<div class="row">
+    <h1 class="col-12">Saber Pro 2017-10</h1>
+</div>
+<div class="row botones">
+    <div class="col-6">
+        <div class="row">
+            <div class="col-6">Subir archivo de pagos: </div>
+            <div class="col-6"><input type="file" (change)="cargarPagos($event)" placeholder="Upload file" accept=".xls, .xlsx, .csv"></div>
+        </div>
+    </div>
+    <div class="col-6">
+        <button type="button" class="btn btn-primary" style="width: 100%" (click)="exportAsExcelFile()">Descargar</button>
+    </div>
+</div>
+<ng2-smart-table class="form-control" [settings]="settings" [source]="source" (editConfirm)="onActualizar($event)"></ng2-smart-table>

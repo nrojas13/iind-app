@@ -1,0 +1,139 @@
+<header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button">&#9776;</button>
+    <a class="navbar-brand" href="#"></a>
+    <ul class="nav navbar-nav mr-auto d-md-down-none">
+        <li class="nav-item">
+            <a class="nav-link navbar-toggler sidebar-toggler" href="#">&#9776;</a>
+        </li>
+        <li><img src="assets/img/logo1.png" style="height: 50px; float: left;" alt=""></li>
+        <li style="margin-left: 10px">Plataforma de <br> <span style="font-weight: 600; padding-left: 10px;">Gestión Académica</span></li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto" style="margin-right: 20px;">
+        <li class="nav-item dropdown" dropdown (onToggle)="toggled($event)">
+            <a href class="nav-link dropdown-toggle" dropdownToggle (click)="false">
+                <span class="d-md-down-none">Nicolás Rojas</span>
+                <img src="assets/img/avatars/5.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+      
+              <div class="dropdown-header text-center"><strong>Ajustes</strong></div>
+      
+              <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Perfil</a>
+              <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Ajustes</a>
+              <div class="divider"></div>
+              <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Cerrar Sesión</a>
+            </div>
+          </li>
+          <li style="font-size: 30px; margin-left: 10px;"><i class="icon-question"></i></li>
+    </ul>
+    
+    
+</header>
+
+<div class="app-body">
+    <div class="sidebar" style="background: rgb(73, 193, 229)">
+        <nav class="sidebar-nav">
+            <ul class="nav">
+                <li class="nav-item nav-dropdown" routerLinkActive="open">
+                    <a class="nav-link nav-dropdown-toggle" href="#" *ngIf="authState"><i class="icon-globe"></i> Administración</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/administracion/vertodos']"><i class="icon-people"></i> Ver Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/administracion/vercursos']"><i class="icon-note"></i> Ver Cursos</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/administracion/indicadores']"><i class="icon-speedometer"></i> Indicadores</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/administracion/cargardatos']"><i class="icon-cloud-upload"></i> Cargar Datos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown" routerLinkActive="open">
+                    <a class="nav-link nav-dropdown-toggle" href="#" *ngIf="authState"><i class="icon-notebook"></i> Monitorías</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/monitorias/indicadores']"><i class="icon-speedometer"></i> Indicadores</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/monitorias/vermonitorias']"><i class="icon-eye"></i> Ver Monitorías</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/monitorias/asignarplazas']"><i class="icon-pin"></i> Asignar Plazas</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/practicas']" *ngIf="authState"><i class="icon-globe"></i> Prácticas </a>
+                </li>
+                <li class="nav-item nav-dropdown" routerLinkActive="open">
+                    <a class="nav-link nav-dropdown-toggle" href="#" *ngIf="authState"><i class="icon-directions"></i> Citas</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/citas/citas']"><i class="icon-speedometer"></i> Horario</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/citas/vercitas']"><i class="icon-eye"></i> Ver Citas</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/saberpro']" *ngIf="authState"><i class="icon-calendar"></i> Saber Pro </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']" *ngIf="authState"><i class="icon-graduation"></i> Graduandos </a>
+                </li>
+                <li class="nav-item nav-dropdown" routerLinkActive="open">
+                    <a class="nav-link nav-dropdown-toggle" href="#" *ngIf="authState"><i class="icon-book-open"></i> Noticias</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/noticias/noticias']"><i class="icon-note"></i> Crear Noticia</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/noticias/vernoticias']"><i class="icon-eye"></i> Ver Noticias</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown" routerLinkActive="open">
+                    <a class="nav-link nav-dropdown-toggle" href="#" *ngIf="authState"><i class="icon-screen-smartphone"></i> Notificaciones</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/notificaciones/notificaciones']"><i class="icon-plus"></i> Crear Notificacion</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/notificaciones/vernotificaciones']"><i class="icon-envelope-letter"></i> Ver Notificaciones</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/login']" *ngIf="!authState"><i class="icon-login"></i> Login </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="" (click)="logout()" *ngIf="authState"><i class="icon-logout"></i> Logout </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main content -->
+    <main class="main">
+
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb">
+            <app-breadcrumbs></app-breadcrumbs>
+        </ol>
+
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+        <!-- /.conainer-fluid -->
+    </main>
+</div>
+
+<footer class="app-footer">
+    <a href="http://coreui.io">IIND</a> &copy; 2017 Universidad de los Andes.
+    <span class="float-right">Powered by <a href="http://nrojas.com">nrojas.com</a>
+    </span>
+</footer>

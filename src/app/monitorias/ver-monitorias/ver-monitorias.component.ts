@@ -17,7 +17,7 @@ export class VerMonitoriasComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('https://iindinfo.herokuapp.com/monitorias')
+    this.http.get('http://51.143.100.161/monitorias')
                       .map(response => response.json())
                       .subscribe(result => {
                         this.monitorias = [];
@@ -42,7 +42,7 @@ export class VerMonitoriasComponent implements OnInit {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.http
-             .put("https://iindinfo.herokuapp.com/monitorias/" + monitoria_id, JSON.stringify(json), { headers: headers })
+             .put("http://51.143.100.161/monitorias/" + monitoria_id, JSON.stringify(json), { headers: headers })
              .map(res => res.json())
              .subscribe(result => {
               event.confirm.resolve(event.newData);

@@ -14,7 +14,7 @@ export class AsignarPlazasComponent implements OnInit {
   constructor(private http: Http) { }
 
   ngOnInit() {
-    this.http.get('https://iindinfo.herokuapp.com/cursos/')
+    this.http.get('http://51.143.100.161/cursos/')
                     .map(response => response.json())
                     .subscribe(result => {
                       this.cursos = result;
@@ -31,7 +31,7 @@ export class AsignarPlazasComponent implements OnInit {
       monitores_requeridos: monitores_requeridos,
       comentarios_plazas: comentarios_plazas
     };
-    this.http.put("https://iindinfo.herokuapp.com/cursos/" + id, JSON.stringify(json), { headers: headers })
+    this.http.put("http://51.143.100.161/cursos/" + id, JSON.stringify(json), { headers: headers })
       .map(res => res.json())
       .subscribe(result => {
         console.log(result);

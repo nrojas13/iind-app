@@ -25,7 +25,7 @@ export class CitasComponent implements OnInit {
   
   ngAfterViewInit() {
     // Events in here
-    this.http.get('https://iindinfo.herokuapp.com/horarios/')
+    this.http.get('http://51.143.100.161/horarios/')
                     .map(response => response.json())
                     .subscribe(result => {
                       this.events_homologaciones = [];
@@ -99,7 +99,7 @@ export class CitasComponent implements OnInit {
       console.log(JSON.stringify(json));
       let headers = new Headers();  
       headers.append('Content-Type', 'application/json');
-      this.http.post("https://iindinfo.herokuapp.com/horarios/", JSON.stringify(json), { headers: headers })
+      this.http.post("http://51.143.100.161/horarios/", JSON.stringify(json), { headers: headers })
         .map(res => res.json())
         .subscribe(result => {
           console.log(result);

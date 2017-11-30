@@ -28,7 +28,7 @@ export class NoticiasComponent implements OnInit {
       imagen_url: this.noticia.imagen,
       fecha: new Date()
     };
-    this.http.post("https://iindinfo.herokuapp.com/noticias/", JSON.stringify(json), { headers: headers })
+    this.http.post("http://51.143.100.161/noticias/", JSON.stringify(json), { headers: headers })
       .map(res => res.json())
       .subscribe(result => {
         console.log(result);

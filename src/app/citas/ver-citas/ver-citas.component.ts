@@ -23,7 +23,7 @@ export class VerCitasComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.getWeek(new Date()));
-    this.http.get('https://iindinfo.herokuapp.com/citas/')
+    this.http.get('http://51.143.100.161/citas/')
       .map(response => response.json())
       .subscribe(result => {
         this.citasHomologaciones = [];
@@ -67,7 +67,7 @@ export class VerCitasComponent implements OnInit {
 
   onVerDetalles(cita) {
     let estudiante_id = cita.estudiante_id;
-    this.http.get('https://iindinfo.herokuapp.com/estudiantes/' + estudiante_id)
+    this.http.get('http://51.143.100.161/estudiantes/' + estudiante_id)
       .map(response => response.json())
       .subscribe(estudiante => {
         let inicio = new Date(cita.fecha_inicio);
@@ -97,7 +97,7 @@ export class VerCitasComponent implements OnInit {
       cancelada_por_id: this.administrador,
       cancelada_por: 'admin'
     };
-    this.http.put('https://iindinfo.herokuapp.com/citas/' + cita.id, JSON.stringify(json), { headers })
+    this.http.put('http://51.143.100.161/citas/' + cita.id, JSON.stringify(json), { headers })
       .map(response => response.json())
       .subscribe(result => {
         swal({
@@ -124,7 +124,7 @@ export class VerCitasComponent implements OnInit {
       }
       let headers = new Headers();  
       headers.append('Content-Type', 'application/json');
-      this.http.put("https://iindinfo.herokuapp.com/citas/" + cita.id, JSON.stringify(json), { headers: headers })
+      this.http.put("http://51.143.100.161/citas/" + cita.id, JSON.stringify(json), { headers: headers })
         .map(res => res.json())
         .subscribe(result => {
           swal({

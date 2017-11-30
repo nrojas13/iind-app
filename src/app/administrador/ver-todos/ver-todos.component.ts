@@ -16,7 +16,7 @@ export class VerTodosComponent implements OnInit {
   constructor(public http: Http) { }
 
   ngOnInit() {
-    this.http.get('https://iindinfo.herokuapp.com/estudiantes')
+    this.http.get('http://51.143.100.161/estudiantes')
                       .map(response => response.json())
                       .subscribe(result => {
                         console.log(result);

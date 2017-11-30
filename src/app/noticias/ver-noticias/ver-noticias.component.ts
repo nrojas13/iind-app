@@ -16,7 +16,7 @@ export class VerNoticiasComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('http://51.143.100.161/noticias')
+    this.http.get('http://51.143.100.161:3000/noticias')
       .map(response => response.json())
       .subscribe(result => {
         this.noticias = result;
@@ -33,7 +33,7 @@ export class VerNoticiasComponent implements OnInit {
       texto: event.newData.texto,
       imagen_url: event.newData.imagen_url
     };
-    this.http.put("http://51.143.100.161/noticias/" + event.newData.id, JSON.stringify(json), { headers: headers })
+    this.http.put("http://51.143.100.161:3000/noticias/" + event.newData.id, JSON.stringify(json), { headers: headers })
       .map(res => res.json())
       .subscribe(result => {
         console.log(result);

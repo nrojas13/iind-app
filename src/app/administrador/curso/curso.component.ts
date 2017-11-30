@@ -25,7 +25,7 @@ export class CursoComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.curso_id = params.id;
-        this.http.get('http://51.143.100.161/cursos/' + this.curso_id)
+        this.http.get('http://51.143.100.161:3000/cursos/' + this.curso_id)
                     .map(response => response.json())
                     .subscribe(result => {
                       this.curso = result;
@@ -39,7 +39,7 @@ export class CursoComponent implements OnInit {
   onCrearProfesor() {
     let headers = new Headers();  
     headers.append('Content-Type', 'application/json');
-    this.http.post("http://51.143.100.161/profesores/", JSON.stringify(this.profesor), { headers: headers })
+    this.http.post("http://51.143.100.161:3000/profesores/", JSON.stringify(this.profesor), { headers: headers })
       .map(res => res.json())
       .subscribe(result1 => {
         let profesor: ProfesorModel = result1;
@@ -48,7 +48,7 @@ export class CursoComponent implements OnInit {
           curso_id: this.curso_id,
           profesor_id: profesor.id
         };
-        this.http.post("http://51.143.100.161/profesores/" + profesor.id + "/asignar_curso", JSON.stringify(json), { headers: headers })
+        this.http.post("http://51.143.100.161:3000/profesores/" + profesor.id + "/asignar_curso", JSON.stringify(json), { headers: headers })
         .subscribe(result2 => {
           this.showAlert();
         });

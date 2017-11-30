@@ -20,7 +20,7 @@ export class PracticasComponent implements OnInit {
   constructor(private http: Http) { }
 
   ngOnInit() {
-    this.http.get('http://51.143.100.161/practicas')
+    this.http.get('http://51.143.100.161:3000/practicas')
       .map(response => response.json())
       .subscribe(result => {
         this.practicas = [];
@@ -58,7 +58,7 @@ export class PracticasComponent implements OnInit {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.http
-        .put("http://51.143.100.161/practicas/" + practica_id, JSON.stringify(json), { headers: headers })
+        .put("http://51.143.100.161:3000/practicas/" + practica_id, JSON.stringify(json), { headers: headers })
         .map(res => res.json())
         .subscribe(result => {
         event.confirm.resolve(event.newData);
